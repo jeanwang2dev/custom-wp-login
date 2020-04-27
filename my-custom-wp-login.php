@@ -40,10 +40,11 @@ function cwpl_change_header_url() {
     return $url;
 }
 
-add_action( 'login_head', 'cwpl_remove_shake' );
+add_action( 'login_footer', 'cwpl_remove_shake' );
 /**
  * Remove login page shake effect when login info is wrong
  */
 function cwpl_remove_shake() {
-  remove_action( 'login_head', 'wp_shake_js', 12 );
+  remove_action( 'login_footer', 'wp_shake_js', 12 );
 }
+
